@@ -1129,8 +1129,10 @@
                             <span class="port-card-date">2025</span>
                         </div>
                         <div class="port-card-media-box">
-                            <img src="assets/projects/stem-quadruped.jpg" alt="STEM Quadruped Hardware Kinematics" loading="lazy">
-                            <span class="port-media-badge">HARDWARE KINEMATICS</span>
+                            <video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg">
+                                <source src="assets/projects/stem-quadruped.mp4" type="video/mp4">
+                            </video>
+                            <span class="port-media-badge"><span class="port-media-dot"></span>HARDWARE DEMO</span>
                         </div>
                         <p class="port-card-desc">
                             Co-engineered an open-source 8-DOF quadruped robot. Implemented inverse kinematics on an Arduino for real time leg trajectory planning and control, and deployed a custom on-device wake-word model on an ESP-32 for voice command triggers.
@@ -1656,6 +1658,14 @@
                     <div class="modal-media-box">
                         <video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" controls style="width: 100%; max-height: 380px; object-fit: cover; display: block;">
                             <source src="assets/projects/unitree-g1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                `;
+            } else if (projectId === 'stem-quadruped') {
+                mediaHtml = `
+                    <div class="modal-media-box">
+                        <video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
+                            <source src="assets/projects/stem-quadruped.mp4" type="video/mp4">
                         </video>
                     </div>
                 `;
