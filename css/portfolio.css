@@ -474,6 +474,14 @@
             border-radius: 3px;
         }
 
+        .port-tag.port-tag-status,
+        .port-tag-status {
+            background: #fef3c7;
+            color: #92400e;
+            font-weight: 600;
+            border: 1px solid #fde68a;
+        }
+
         .port-card-footer-row {
             display: flex;
             justify-content: flex-end;

@@ -127,7 +127,8 @@
             if (data.tags && data.tags.length > 0) {
                 tagsHtml = '<div class="port-card-tags" style="margin-top: 14px; margin-bottom: 0;">';
                 data.tags.forEach(t => {
-                    tagsHtml += `<span class="port-tag">${t}</span>`;
+                    const cls = t.includes('In Progress') ? 'port-tag port-tag-status' : 'port-tag';
+                    tagsHtml += `<span class="${cls}">${t}</span>`;
                 });
                 tagsHtml += '</div>';
             }

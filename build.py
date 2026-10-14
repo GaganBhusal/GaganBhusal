@@ -44,7 +44,7 @@ def parse_project_file(filepath, pid):
     status = status_m.group(1).strip() if status_m else ''
 
     # Extract tags
-    tags = re.findall(r'<span class="port-tag">\s*(.*?)\s*</span>', html)
+    tags = re.findall(r'<span class="port-tag[^"]*">\s*(.*?)\s*</span>', html)
 
     # Extract links
     links = []
@@ -158,7 +158,11 @@ def generate_card_html(p):
     dot_html = '<span class="port-media-dot"></span>' if p['has_dot'] else ''
     badge_html = f'<span class="port-media-badge">{dot_html}{p["badge_label"]}</span>' if p['badge_label'] else ''
 
-    tags_html = '\n'.join([f'                            <span class="port-tag">{t}</span>' for t in p['tags'][:6]])
+    card_tags = []
+    for t in p['tags'][:6]:
+        cls = 'port-tag port-tag-status' if 'In Progress' in t else 'port-tag'
+        card_tags.append(f'                            <span class="{cls}">{t}</span>')
+    tags_html = '\n'.join(card_tags)
 
     footer_row = f'''                        <div class="port-card-footer-row">
                             {p['footer_slot']}
