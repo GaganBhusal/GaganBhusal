@@ -928,24 +928,6 @@
                         <p class="port-card-desc">
                             Trained an asymmetric actor-critic locomotion policy across 4,096 parallel environments in <strong>Genesis simulator</strong> with aggressive domain randomization. Transferred <strong>zero-shot</strong> to the physical Unitree Go2 via low-level CycloneDDS, validating stable standing, push recovery, and blind omnidirectional walking.
                         </p>
-                        <div class="port-card-metrics">
-                            <div class="port-card-metric-item">
-                                <span class="port-card-metric-val">500 Hz</span>
-                                <span class="port-card-metric-lbl">Low-Level Loop</span>
-                            </div>
-                            <div class="port-card-metric-item">
-                                <span class="port-card-metric-val">51.7 s</span>
-                                <span class="port-card-metric-lbl">Cont. Walk (No Falls)</span>
-                            </div>
-                            <div class="port-card-metric-item">
-                                <span class="port-card-metric-val">4,096</span>
-                                <span class="port-card-metric-lbl">Genesis Envs</span>
-                            </div>
-                            <div class="port-card-metric-item">
-                                <span class="port-card-metric-val">0.15 rad/s</span>
-                                <span class="port-card-metric-lbl">Yaw RMSE</span>
-                            </div>
-                        </div>
                     </div>
                     <div>
                         <div class="port-card-tags">
@@ -990,7 +972,7 @@
                             <span class="port-tag">PPO Distillation</span>
                         </div>
                         <div class="port-card-footer-row">
-                            <span class="port-card-ext-link">RAN Lab</span>
+                            <span class="port-card-ext-link">Minor Project</span>
                         </div>
                     </div>
                 </div>
@@ -1204,9 +1186,8 @@
                     <span class="port-exp-date">May 2026 – Present</span>
                 </div>
                 <ul class="port-exp-bullets">
-                    <li>Developing sim-to-real legged locomotion systems for the <strong>Unitree Go2 quadruped</strong> and <strong>Unitree G1 humanoid</strong> using Mjlab and Genesis Simulator.</li>
-                    <li>Deployed a trained locomotion policy on the physical Go2, achieving stable walking.</li>
-                    <li>Developing a motion-imitation pipeline for the 23-Dof Unitree G1 from simulation to real world deployment. (Simulation Completed).</li>
+                    <li>Developing sim-to-real legged locomotion systems for the <strong>Unitree Go2 quadruped</strong> using Mjlab and Genesis Simulator.</li>
+                    <li>Trained and deployed a robust locomotion policy zero-shot on the physical Unitree Go2, validating stable omnidirectional walking and push recovery.</li>
                 </ul>
             </div>
 
@@ -1362,10 +1343,6 @@
                         title: "Hardware Deployment & Telemetry Verification",
                         desc: "Zero-shot hardware deployment evaluated on the physical Unitree Go2 over 51.7 seconds of continuous walking without falls or emergency stops.",
                         metrics: [
-                            { label: "Continuous Walk", value: "51.7 s" },
-                            { label: "Hardware Loop", value: "500 Hz" },
-                            { label: "Parallel Envs", value: "4,096" },
-                            { label: "Yaw RMSE", value: "0.15 rad/s" }
                         ]
                     }
                 ],
@@ -1378,7 +1355,7 @@
             },
             'unitree-g1': {
                 title: "Unitree G1 Humanoid Motion Imitation",
-                status: "Active · 2026",
+                status: "Minor Project · 2026",
                 badge: "Humanoid Robotics",
                 date: "2026",
                 tags: ["Unitree G1", "Genesis Simulator", "Mjlab", "Motion Imitation", "Teacher-Student Distillation", "PPO"],
@@ -1656,7 +1633,7 @@
             } else if (projectId === 'unitree-g1') {
                 mediaHtml = `
                     <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" controls style="width: 100%; max-height: 380px; object-fit: cover; display: block;">
+                        <video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
                             <source src="assets/projects/unitree-g1.mp4" type="video/mp4">
                         </video>
                     </div>
