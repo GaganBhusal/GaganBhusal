@@ -146,8 +146,28 @@
             font-size: 1.05rem;
             color: #333;
             line-height: 1.6;
+            margin: 0 0 14px 0;
+            max-width: 680px;
+        }
+
+        .port-interests {
+            font-size: 0.93rem;
+            line-height: 1.55;
+            color: #4b5563;
             margin: 0 0 20px 0;
             max-width: 680px;
+            padding-left: 12px;
+            border-left: 2px solid var(--text-main);
+        }
+
+        .port-interests-label {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-right: 4px;
+        }
+
+        .port-interests-text {
+            color: #374151;
         }
 
         .port-badges-row {

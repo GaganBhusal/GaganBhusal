@@ -3,6 +3,7 @@
 Static Site Builder for Gagan Bhusal's Portfolio
 Combines modular files from:
   - sections/bio.html
+  - sections/research-interests.html
   - sections/experience.html
   - sections/education.html
   - sections/skills.html
@@ -203,9 +204,14 @@ def build():
         return ''
 
     bio_html = read_section('bio.html')
+    interests_html = read_section('research-interests.html')
     exp_html = read_section('experience.html')
     edu_html = read_section('education.html')
     skills_html = read_section('skills.html')
+
+    # Inject research interests into bio if placeholder is present
+    if '{{RESEARCH_INTERESTS}}' in bio_html:
+        bio_html = bio_html.replace('{{RESEARCH_INTERESTS}}', interests_html)
 
     # Read projects
     projects_list = []
@@ -238,6 +244,7 @@ def build():
 
     # Replace template placeholders
     output = template.replace('{{BIO}}', bio_html)
+    output = output.replace('{{RESEARCH_INTERESTS}}', interests_html)
     output = output.replace('{{PROJECTS_GRID}}', grid_html)
     output = output.replace('{{EXPERIENCE}}', exp_html)
     output = output.replace('{{EDUCATION}}', edu_html)
