@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitree G1 Humanoid Motion Imitation | Gagan Bhusal</title>
+    <meta name="description" content="Building a whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid robot. Converts human video into robot joint targets via GVHMR and GMR retargeting, trains an expert PPO teacher in Genesis, and distills into a robust student policy for sim-to-real transfer.">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <style>
+        .project-page-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+        .project-back-bar {
+            margin-bottom: 24px;
+        }
+        .project-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .project-back-link:hover {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body class="portfolio-body">
+    <div class="project-page-wrap">
+
+        <!-- Top Navigation -->
+        <header class="port-nav">
+            <a href="../index.html" class="port-logo">
+                Gagan Bhusal
+                <span>/ Portfolio</span>
+            </a>
+            <nav class="port-links">
+                <a href="../index.html#projects">&larr; All Projects</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#education">Education</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="https://gaganbhusal.netlify.app" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+                <a href="mailto:gaganbhusal20@gmail.com" class="port-btn-accent">Contact</a>
+            </nav>
+        </header>
+
+        <div class="project-back-bar">
+            <a href="../index.html#projects" class="project-back-link">
+                &larr; Back to Selected Projects
+            </a>
+        </div>
+
+        <!-- Standalone Project Detail Article -->
+        <article class="project-detail-article" data-project-id="unitree-g1">
+            <div class="modal-header">
+                <div class="modal-badge-row">
+                    <span class="modal-badge">Humanoid Robotics</span>
+                    <span class="modal-date">Minor Project · 2026</span>
+                </div>
+                <h1 class="modal-title">Unitree G1 Humanoid Motion Imitation</h1>
+                <div class="port-card-tags" style="margin-top: 14px; margin-bottom: 0;">
+                    <span class="port-tag">Unitree G1</span>
+                    <span class="port-tag">Genesis Simulator</span>
+                    <span class="port-tag">Mjlab</span>
+                    <span class="port-tag">Motion Imitation</span>
+                    <span class="port-tag">Teacher-Student Distillation</span>
+                    <span class="port-tag">PPO</span>
+                </div>
+                
+            </div>
+
+            <div class="modal-media-box">
+                <video autoplay loop muted playsinline poster="../assets/projects/unitree-g1.jpg" controls style="width: 100%; max-height: 440px; object-fit: contain; background: #000; display: block;">
+                    <source src="../assets/projects/unitree-g1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Short Card Summary used on Homepage Grid -->
+            <!-- CARD_SUMMARY_START -->
+            <div class="project-card-summary" style="display: none;" 
+                 data-badge-label="GENESIS SIMULATION" 
+                 data-has-dot="true" 
+                 data-is-featured="true" 
+                 data-date="2026">
+                <div class="card-footer-slot"><span class="port-card-ext-link">Minor Project</span></div>
+                <p class="port-card-desc">
+                    Building a whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid robot. Converts human video into robot joint targets via GVHMR and GMR retargeting, trains an expert PPO teacher in Genesis, and distills into a robust student policy for sim-to-real transfer.
+                </p>
+            </div>
+            <!-- CARD_SUMMARY_END -->
+
+            <!-- Overview -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">Project Overview &amp; Motivation</h4>
+                <p class="modal-body-text">Developing an end-to-end whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid robot. Instead of manual trajectory tracking or hand-tuned keyframing, this system learns human-like walking and dynamic motions directly from monocular video demonstrations.</p>
+            </div>
+
+            <!-- Architecture -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">System Architecture &amp; Methodology</h4>
+                <div class="modal-body-text">The pipeline consists of three core stages:
+                <ol class="modal-bullets" style="list-style-type: decimal; padding-left: 22px; margin-top: 10px;">
+                    <li><strong>Human Pose Extraction:</strong> Extract 3D human motion sequences from monocular video demonstrations using GVHMR.</li>
+                    <li><strong>Kinematic Retargeting:</strong> Map human joint trajectories to the kinematic tree, range of motion, and joint limits of the Unitree G1 via GMR.</li>
+                    <li><strong>Teacher-Student RL Distillation:</strong> Train an expert teacher policy with PPO in Genesis/Mjlab Simulator using motion-matching rewards, followed by student policy distillation conditioned solely on onboard sensor proprioception (IMU and joint encoders) for physical sim-to-real transfer.</li>
+                </ol></div>
+            </div>
+
+            <!-- Demos & Benchmarks -->
+            
+            <div class="modal-section">
+                <h4 class="modal-section-title">Simulated Imitation & Sim-to-Real Transfer</h4>
+                <p class="modal-body-text">Demonstrated accurate retargeting of dynamic human motions turns in both Genesis and Mjlab Simulator. Student policy achieves partial sim-to-real transfer. (Working on improving sim-to-real transfer with domain randomization and teacher-student distillation.)</p>
+            </div>
+
+            <!-- Specs -->
+            
+            <div class="modal-section">
+                <h4 class="modal-section-title">Technical Specifications &amp; Stack</h4>
+                <ul class="modal-bullets">
+                    <li>Platform: Unitree G1 Humanoid Robot (23-DOF)</li>
+                    <li>Pose Estimation: GVHMR (General Video Human Motion Recovery)</li>
+                    <li>Kinematic Retargeting: GMR (Geometric Motion Retargeting)</li>
+                    <li>Policy Training: Genesis Simulator + PPO Teacher-Student Distillation</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Project Page Footer -->
+        <footer class="port-footer" style="margin-top: 60px;">
+            <div>
+                <a href="../index.html#projects" class="project-back-link" style="font-weight: 600;">
+                    &larr; Back to Homepage Portfolio
+                </a>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+                &copy; 2026 Gagan Bhusal &bull; Kathmandu, Nepal
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

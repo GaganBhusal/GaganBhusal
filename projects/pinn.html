@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics-Informed Neural Networks (PINNs) | Gagan Bhusal</title>
+    <meta name="description" content="Deep learning framework for solving arbitrary non-linear ODEs and PDEs without labeled data, validated against the 1D heat equation. Includes an interactive Streamlit application supporting user-defined equations and 3D solution visualization.">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <style>
+        .project-page-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+        .project-back-bar {
+            margin-bottom: 24px;
+        }
+        .project-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .project-back-link:hover {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body class="portfolio-body">
+    <div class="project-page-wrap">
+
+        <!-- Top Navigation -->
+        <header class="port-nav">
+            <a href="../index.html" class="port-logo">
+                Gagan Bhusal
+                <span>/ Portfolio</span>
+            </a>
+            <nav class="port-links">
+                <a href="../index.html#projects">&larr; All Projects</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#education">Education</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="https://gaganbhusal.netlify.app" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+                <a href="mailto:gaganbhusal20@gmail.com" class="port-btn-accent">Contact</a>
+            </nav>
+        </header>
+
+        <div class="project-back-bar">
+            <a href="../index.html#projects" class="project-back-link">
+                &larr; Back to Selected Projects
+            </a>
+        </div>
+
+        <!-- Standalone Project Detail Article -->
+        <article class="project-detail-article" data-project-id="pinn">
+            <div class="modal-header">
+                <div class="modal-badge-row">
+                    <span class="modal-badge">Scientific Machine Learning</span>
+                    <span class="modal-date">Completed · 2025</span>
+                </div>
+                <h1 class="modal-title">Physics-Informed Neural Networks (PINNs)</h1>
+                <div class="port-card-tags" style="margin-top: 14px; margin-bottom: 0;">
+                    <span class="port-tag">SciML</span>
+                    <span class="port-tag">PyTorch</span>
+                    <span class="port-tag">Differential Equations</span>
+                    <span class="port-tag">Streamlit</span>
+                    <span class="port-tag">PINNs</span>
+                </div>
+                <div class="modal-links-bar">
+                    <a href="https://github.com/GaganBhusal/PINN-Differential-Equations" class="modal-action-link" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+                </div>
+            </div>
+
+            <div class="modal-media-box">
+                <img src="../assets/projects/pinn.jpg" alt="Physics-Informed Neural Networks (PINNs)" style="width: 100%; max-height: 440px; object-fit: cover; display: block;">
+            </div>
+
+            <!-- Short Card Summary used on Homepage Grid -->
+            <!-- CARD_SUMMARY_START -->
+            <div class="project-card-summary" style="display: none;" 
+                 data-badge-label="2D PDE FLOW FIELD" 
+                 data-has-dot="false" 
+                 data-is-featured="false" 
+                 data-date="2025">
+                <div class="card-footer-slot"><a href="https://github.com/GaganBhusal/PINN-Differential-Equations" target="_blank" rel="noopener noreferrer" class="port-card-ext-link" onclick="event.stopPropagation();">GitHub ↗</a></div>
+                <p class="port-card-desc">
+                    Deep learning framework for solving arbitrary non-linear ODEs and PDEs without labeled data, validated against the 1D heat equation. Includes an interactive Streamlit application supporting user-defined equations and 3D solution visualization.
+                </p>
+            </div>
+            <!-- CARD_SUMMARY_END -->
+
+            <!-- Overview -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">Project Overview &amp; Motivation</h4>
+                <p class="modal-body-text">A scientific machine learning research tool for solving arbitrary ordinary and partial differential equations (ODEs and PDEs) without requiring labeled solution datasets. The network learns by enforcing governing physical differential equations directly within its loss function.</p>
+            </div>
+
+            <!-- Architecture -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">System Architecture &amp; Methodology</h4>
+                <div class="modal-body-text">Constructed deep fully-connected networks with automatic differentiation (Autograd) computing higher-order partial derivatives. The composite loss enforces initial conditions, boundary conditions, and differential operator residuals. Deployed within an interactive Streamlit application.</div>
+            </div>
+
+            <!-- Demos & Benchmarks -->
+            
+
+            <!-- Specs -->
+            
+            <div class="modal-section">
+                <h4 class="modal-section-title">Technical Specifications &amp; Stack</h4>
+                <ul class="modal-bullets">
+                    <li>Framework: PyTorch with automatic differentiation</li>
+                    <li>Web Interface: Streamlit with Plotly 3D visualization</li>
+                    <li>Tested Equations: 1D Heat Equation, Wave Equation, Harmonic Oscillators</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Project Page Footer -->
+        <footer class="port-footer" style="margin-top: 60px;">
+            <div>
+                <a href="../index.html#projects" class="project-back-link" style="font-weight: 600;">
+                    &larr; Back to Homepage Portfolio
+                </a>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+                &copy; 2026 Gagan Bhusal &bull; Kathmandu, Nepal
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

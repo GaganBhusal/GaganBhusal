@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitree Go2 Sim-to-Real Quadruped Locomotion | Gagan Bhusal</title>
+    <meta name="description" content="Trained an asymmetric actor-critic locomotion policy across 4,096 parallel environments in Genesis simulator with aggressive domain randomization. Transferred zero-shot to the physical Unitree Go2 via low-level CycloneDDS, validating stable standing, push recovery, and blind omnidirectional walking.">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <style>
+        .project-page-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+        .project-back-bar {
+            margin-bottom: 24px;
+        }
+        .project-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .project-back-link:hover {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body class="portfolio-body">
+    <div class="project-page-wrap">
+
+        <!-- Top Navigation -->
+        <header class="port-nav">
+            <a href="../index.html" class="port-logo">
+                Gagan Bhusal
+                <span>/ Portfolio</span>
+            </a>
+            <nav class="port-links">
+                <a href="../index.html#projects">&larr; All Projects</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#education">Education</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="https://gaganbhusal.netlify.app" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+                <a href="mailto:gaganbhusal20@gmail.com" class="port-btn-accent">Contact</a>
+            </nav>
+        </header>
+
+        <div class="project-back-bar">
+            <a href="../index.html#projects" class="project-back-link">
+                &larr; Back to Selected Projects
+            </a>
+        </div>
+
+        <!-- Standalone Project Detail Article -->
+        <article class="project-detail-article" data-project-id="unitree-go2">
+            <div class="modal-header">
+                <div class="modal-badge-row">
+                    <span class="modal-badge">Sim-to-Real RL</span>
+                    <span class="modal-date">Completed · Oct 2026</span>
+                </div>
+                <h1 class="modal-title">Unitree Go2 Sim-to-Real Quadruped Locomotion</h1>
+                <div class="port-card-tags" style="margin-top: 14px; margin-bottom: 0;">
+                    <span class="port-tag">Genesis</span>
+                    <span class="port-tag">PPO</span>
+                    <span class="port-tag">Unitree Go2</span>
+                    <span class="port-tag">Domain Randomization</span>
+                    <span class="port-tag">Sim-to-Real</span>
+                    <span class="port-tag">CycloneDDS</span>
+                </div>
+                <div class="modal-links-bar">
+                    <a href="https://github.com/GaganBhusal/go2_sim2real" class="modal-action-link" target="_blank" rel="noopener noreferrer">GitHub Repository (go2_sim2real) ↗</a>
+                </div>
+            </div>
+
+            <div class="modal-media-box">
+                <video autoplay loop muted playsinline poster="../assets/projects/unitree-go2.jpg" controls style="width: 100%; max-height: 440px; object-fit: contain; background: #000; display: block;">
+                    <source src="../assets/projects/unitree-go2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Short Card Summary used on Homepage Grid -->
+            <!-- CARD_SUMMARY_START -->
+            <div class="project-card-summary" style="display: none;" 
+                 data-badge-label="SIM-TO-REAL DEMO" 
+                 data-has-dot="true" 
+                 data-is-featured="true" 
+                 data-date="2026">
+                <div class="card-footer-slot"><a href="https://github.com/GaganBhusal/go2_sim2real" target="_blank" rel="noopener noreferrer" class="port-card-ext-link" onclick="event.stopPropagation();">Read full write-up &amp; code ↗</a></div>
+                <p class="port-card-desc">
+                    Trained an asymmetric actor-critic locomotion policy across 4,096 parallel environments in <strong>Genesis simulator</strong> with aggressive domain randomization. Transferred <strong>zero-shot</strong> to the physical Unitree Go2 via low-level CycloneDDS, validating stable standing, push recovery, and blind omnidirectional walking.
+                </p>
+            </div>
+            <!-- CARD_SUMMARY_END -->
+
+            <!-- Overview -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">Project Overview &amp; Motivation</h4>
+                <p class="modal-body-text">Reinforcement learning locomotion policy trained in Genesis simulator and deployed zero-shot onto the physical Unitree Go2 quadruped. Hardware validation demonstrated stable standing, push recovery, and blind omnidirectional walking.</p>
+            </div>
+
+            <!-- Architecture -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">System Architecture &amp; Methodology</h4>
+                <div class="modal-body-text">Asymmetric actor-critic (PPO via rsl_rl) trained across 4,096 parallel environments in Genesis with aggressive domain randomization (mass, friction, pushes, actuator PD gains). Commands stream directly over low-level CycloneDDS at 500 Hz.</div>
+            </div>
+
+            <!-- Demos & Benchmarks -->
+            
+            <div class="modal-section">
+                <h4 class="modal-section-title">Hardware Deployment & Telemetry Verification</h4>
+                <p class="modal-body-text">Zero-shot hardware deployment evaluated on the physical Unitree Go2 over 51.7 seconds of continuous walking without falls or emergency stops.</p>
+            </div>
+
+            <!-- Specs -->
+            
+            <div class="modal-section">
+                <h4 class="modal-section-title">Technical Specifications &amp; Stack</h4>
+                <ul class="modal-bullets">
+                    <li>Hardware: Unitree Go2 Quadruped (12 actuated DOF)</li>
+                    <li>Interface: Unitree SDK 2 + CycloneDDS (500 Hz LowCmd)</li>
+                    <li>Simulation: Genesis GPU Dynamics (4,096 parallel envs)</li>
+                    <li>Policy: Asymmetric Actor-Critic (PPO via rsl_rl)</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Project Page Footer -->
+        <footer class="port-footer" style="margin-top: 60px;">
+            <div>
+                <a href="../index.html#projects" class="project-back-link" style="font-weight: 600;">
+                    &larr; Back to Homepage Portfolio
+                </a>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+                &copy; 2026 Gagan Bhusal &bull; Kathmandu, Nepal
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
