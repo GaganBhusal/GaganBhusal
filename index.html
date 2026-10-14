@@ -772,11 +772,7 @@
                     const target = l.external ? ' target="_blank" rel="noopener noreferrer"' : '';
                     linksHtml += `<a href="${l.url}" class="modal-action-link"${target}>${l.text}</a>`;
                 });
-                // Add dedicated page link
-                linksHtml += `<a href="projects/${projectId}.html" class="modal-action-link" style="border-color: #000; font-weight: 600;">Standalone Page ↗</a>`;
                 linksHtml += '</div>';
-            } else {
-                linksHtml = `<div class="modal-links-bar"><a href="projects/${projectId}.html" class="modal-action-link" style="border-color: #000; font-weight: 600;">Standalone Page ↗</a></div>`;
             }
 
             let tagsHtml = '';
