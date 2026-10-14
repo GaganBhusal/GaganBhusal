@@ -127,7 +127,7 @@
                             <h3 class="port-card-title">
                                 Unitree G1 Humanoid Motion Imitation
                             </h3>
-                            <span class="port-card-date">In Progress · Day 3</span>
+                            <span class="port-card-date">In Progress · 2026</span>
                         </div>
                         <div class="port-card-media-box">
                             <video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" preload="auto">
@@ -136,7 +136,7 @@
                             <span class="port-media-badge"><span class="port-media-dot"></span>IN PROGRESS</span>
                         </div>
                         <p class="port-card-desc">
-                            <strong>Day 3 Status:</strong> Building an end-to-end whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid. Video pose recovery (GVHMR) and kinematic retargeting (GMR) are complete; currently training whole-body tracking via <strong>Asymmetric Actor-Critic PPO</strong> in Genesis and Mjlab, with sim-to-real transfer pending.
+                            Building an end-to-end whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid robot. Video pose recovery (GVHMR) and kinematic retargeting (GMR) are functional; currently training whole-body tracking via <strong>Asymmetric Actor-Critic PPO</strong> in Genesis and Mjlab, with sim-to-real transfer pending.
                         </p>
                     </div>
                     <div>
@@ -232,20 +232,20 @@
                             <span class="port-media-badge">4X SUPER-RESOLUTION</span>
                         </div>
                         <p class="port-card-desc">
-                            Research Assistant role contributing to a PhD research project on satellite imagery super-resolution and spatial upscaling. <strong>Can't disclose more</strong>
+                            Contributing to a PhD research project on deep learning-based spatial super-resolution for multi-band satellite imagery. Built data pipelines processing paired large-scale UAV ground-truth tiles with spatial-leakage prevention, and benchmarked CNN vs. Vision Transformer restoration backbones in PyTorch. <em>Unpublished, under NDA.</em>
                         </p>
                     </div>
                     <div>
                         <div class="port-card-tags">
                             <span class="port-tag">PyTorch</span>
                             <span class="port-tag">Computer Vision</span>
-                            <span class="port-tag">Transformers</span>
-                            <span class="port-tag">Diffusion</span>
-                            <span class="port-tag">UAV Aerials</span>
+                            <span class="port-tag">Vision Transformers</span>
                             <span class="port-tag">Super-Resolution</span>
+                            <span class="port-tag">Geospatial UAV</span>
+                            <span class="port-tag">Large-Scale Data</span>
                         </div>
                         <div class="port-card-footer-row">
-                            <span class="port-card-ext-link">Research Assistant</span>
+                            <span class="port-card-ext-link">Research Assistant · Under NDA</span>
                         </div>
                     </div>
                 </div>
@@ -381,7 +381,8 @@
                     <span class="port-exp-date">2026 – Present</span>
                 </div>
                 <ul class="port-exp-bullets">
-                    <li>Developing deep learning architectures for spatial upscaling and super-resolution on multi-band satellite images.</li>
+                    <li>Engineering deep learning pipelines in PyTorch for spatial super-resolution and upscaling of multispectral satellite imagery using paired UAV orthomosaics as ground truth.</li>
+                    <li>Built large-scale tile pairing pipelines and designed geographic train/test splits across regions to eliminate spatial autocorrelation leakage. <em>(Unpublished, under NDA)</em></li>
                 </ul>
             </div>
 
@@ -538,9 +539,9 @@
             },
             "unitree-g1": {
                         "title": "Unitree G1 Humanoid Motion Imitation",
-                        "status": "In Progress \u00b7 Day 3 (2026)",
+                        "status": "In Progress \u00b7 2026",
                         "badge": "Humanoid Robotics",
-                        "date": "In Progress \u00b7 Day 3",
+                        "date": "In Progress \u00b7 2026",
                         "tags": [
                                     "In Progress",
                                     "Unitree G1",
@@ -657,17 +658,28 @@
                         "tags": [
                                     "PyTorch",
                                     "Computer Vision",
-                                    "Transformers",
-                                    "Diffusion",
-                                    "UAV Aerials",
-                                    "Super-Resolution"
+                                    "Vision Transformers",
+                                    "Super-Resolution",
+                                    "Geospatial UAV",
+                                    "Large-Scale Data"
                         ],
                         "links": [],
                         "mediaHtml": "<div class=\"modal-media-box\">\n                        <img src=\"assets/projects/satellite.png\" alt=\"Satellite Image Super-Resolution & Spatial Upscaling\" style=\"width: 100%; max-height: 440px; object-fit: cover; display: block;\">\n                    </div>",
-                        "overview": "Working as a Research Assistant contributing to a PhD research project focused on deep learning based spatial super-resolution and upscaling of multispectral satellite imagery. The goal is training Vision Transformers (Swin Transformer / SwinIR) and diffusion models against paired high-resolution UAV aerial captures as ground truth.",
-                        "architecture": "Can't Disclose",
-                        "demos": [],
-                        "specs": []
+                        "overview": "Serving as a Research Assistant contributing the deep learning engineering component of a PhD research project on spatial super-resolution and spatial upscaling for multi-band satellite imagery, training restoration backbones against high-resolution UAV aerial orthomosaics as ground truth. Specific dataset coordinates, model weights, and benchmark leaderboards remain <strong>unpublished, under NDA</strong>.",
+                        "architecture": "<ul class=\"modal-bullets\">\n                        <li><strong>Large-Scale Data Pipeline:</strong> Built the end-to-end data ingestion, normalization, and tile-pairing pipeline in Python/PyTorch, aligning low-resolution multispectral satellite captures with high-resolution aerial UAV orthomosaics into thousands of paired patches.</li>\n                        <li><strong>Spatial Leakage Prevention:</strong> Designed geographic cross-validation splits across distinct geographical regions rather than random sampling, preventing spatial autocorrelation and data leakage across adjacent tiles.</li>\n                        <li><strong>Model Benchmarking &amp; Exploration:</strong> Implemented and compared super-resolution backbones across CNN-based residual networks, GAN-based perceptual loss models, and modern Vision Transformer architectures under standardized evaluation metrics.</li>\n                    </ul>",
+                        "demos": [
+                                    {
+                                                "title": "Project Status &amp; Disclosure",
+                                                "desc": "Active PhD research collaboration. Quantitative evaluation metrics, architectural modifications, and proprietary datasets remain <strong>unpublished, under NDA</strong> pending academic publication.",
+                                                "metrics": []
+                                    }
+                        ],
+                        "specs": [
+                                    "Role: Research Assistant (Deep Learning)",
+                                    "Status: Active \u00b7 Unpublished, under NDA",
+                                    "Frameworks &amp; Tools: PyTorch, CUDA, NumPy, OpenCV, Geospatial Raster Processing",
+                                    "Domains: Remote Sensing, Computer Vision, Multi-Band Super-Resolution"
+                        ]
             },
             "pinn": {
                         "title": "Physics-Informed Neural Networks (PINNs)",

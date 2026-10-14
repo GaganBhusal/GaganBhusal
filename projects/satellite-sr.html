@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satellite Image Super-Resolution & Spatial Upscaling | Gagan Bhusal</title>
-    <meta name="description" content="Research Assistant role contributing to a PhD research project on satellite imagery super-resolution and spatial upscaling. Can't disclose more">
+    <meta name="description" content="Contributing to a PhD research project on deep learning spatial super-resolution for multi-band satellite imagery. Unpublished, under NDA.">
     <link rel="stylesheet" href="../css/portfolio.css">
     <style>
         .project-page-wrap {
@@ -73,10 +73,10 @@
                 <div class="port-card-tags" style="margin-top: 14px; margin-bottom: 0;">
                     <span class="port-tag">PyTorch</span>
                     <span class="port-tag">Computer Vision</span>
-                    <span class="port-tag">Transformers</span>
-                    <span class="port-tag">Diffusion</span>
-                    <span class="port-tag">UAV Aerials</span>
+                    <span class="port-tag">Vision Transformers</span>
                     <span class="port-tag">Super-Resolution</span>
+                    <span class="port-tag">Geospatial UAV</span>
+                    <span class="port-tag">Large-Scale Data</span>
                 </div>
                 
             </div>
@@ -92,9 +92,9 @@
                  data-has-dot="false" 
                  data-is-featured="false" 
                  data-date="2026 · Current">
-                <div class="card-footer-slot"><span class="port-card-ext-link">Research Assistant</span></div>
+                <div class="card-footer-slot"><span class="port-card-ext-link">Research Assistant · Under NDA</span></div>
                 <p class="port-card-desc">
-                    Research Assistant role contributing to a PhD research project on satellite imagery super-resolution and spatial upscaling. <strong>Can't disclose more</strong>
+                    Contributing to a PhD research project on deep learning-based spatial super-resolution for multi-band satellite imagery. Built data pipelines processing paired large-scale UAV ground-truth tiles with spatial-leakage prevention, and benchmarked CNN vs. Vision Transformer restoration backbones in PyTorch. <em>Unpublished, under NDA.</em>
                 </p>
             </div>
             <!-- CARD_SUMMARY_END -->
@@ -102,19 +102,37 @@
             <!-- Overview -->
             <div class="modal-section">
                 <h4 class="modal-section-title">Project Overview &amp; Motivation</h4>
-                <p class="modal-body-text">Working as a Research Assistant contributing to a PhD research project focused on deep learning based spatial super-resolution and upscaling of multispectral satellite imagery. The goal is training Vision Transformers (Swin Transformer / SwinIR) and diffusion models against paired high-resolution UAV aerial captures as ground truth.</p>
+                <p class="modal-body-text">Serving as a Research Assistant contributing the deep learning engineering component of a PhD research project on spatial super-resolution and spatial upscaling for multi-band satellite imagery, training restoration backbones against high-resolution UAV aerial orthomosaics as ground truth. Specific dataset coordinates, model weights, and benchmark leaderboards remain <strong>unpublished, under NDA</strong>.</p>
             </div>
 
-            <!-- Architecture -->
+            <!-- Architecture & Technical Contributions -->
             <div class="modal-section">
                 <h4 class="modal-section-title">System Architecture &amp; Methodology</h4>
-                <div class="modal-body-text">Can't Disclose</div>
+                <div class="modal-body-text">
+                    <ul class="modal-bullets">
+                        <li><strong>Large-Scale Data Pipeline:</strong> Built the end-to-end data ingestion, normalization, and tile-pairing pipeline in Python/PyTorch, aligning low-resolution multispectral satellite captures with high-resolution aerial UAV orthomosaics into thousands of paired patches.</li>
+                        <li><strong>Spatial Leakage Prevention:</strong> Designed geographic cross-validation splits across distinct geographical regions rather than random sampling, preventing spatial autocorrelation and data leakage across adjacent tiles.</li>
+                        <li><strong>Model Benchmarking &amp; Exploration:</strong> Implemented and compared super-resolution backbones across CNN-based residual networks, GAN-based perceptual loss models, and modern Vision Transformer architectures under standardized evaluation metrics.</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Demos & Benchmarks -->
-            
+            <!-- Project Status -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">Project Status &amp; Disclosure</h4>
+                <p class="modal-body-text">Active PhD research collaboration. Quantitative evaluation metrics, architectural modifications, and proprietary datasets remain <strong>unpublished, under NDA</strong> pending academic publication.</p>
+            </div>
 
             <!-- Specs -->
+            <div class="modal-section">
+                <h4 class="modal-section-title">Technical Specifications &amp; Stack</h4>
+                <ul class="modal-bullets">
+                    <li>Role: Research Assistant (Deep Learning)</li>
+                    <li>Status: Active · Unpublished, under NDA</li>
+                    <li>Frameworks &amp; Tools: PyTorch, CUDA, NumPy, OpenCV, Geospatial Raster Processing</li>
+                    <li>Domains: Remote Sensing, Computer Vision, Multi-Band Super-Resolution</li>
+                </ul>
+            </div>
             
         </article>
 

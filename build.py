@@ -107,11 +107,11 @@ def parse_project_file(filepath, pid):
         footer_slot = ''
 
     # Extract Overview
-    overview_m = re.search(r'<h4 class="modal-section-title">Project Overview &amp; Motivation</h4>\s*<p class="modal-body-text">\s*(.*?)\s*</p>', html, re.DOTALL)
+    overview_m = re.search(r'<h4 class="modal-section-title">Project Overview[^<]*</h4>\s*<p class="modal-body-text">\s*(.*?)\s*</p>', html, re.DOTALL)
     overview = overview_m.group(1).strip() if overview_m else ''
 
     # Extract Architecture
-    arch_m = re.search(r'<h4 class="modal-section-title">System Architecture &amp; Methodology</h4>\s*<div class="modal-body-text">\s*(.*?)\s*</div>', html, re.DOTALL)
+    arch_m = re.search(r'<h4 class="modal-section-title">(?:System Architecture|Technical Contributions)[^<]*</h4>\s*<div class="modal-body-text">\s*(.*?)\s*</div>', html, re.DOTALL)
     architecture = arch_m.group(1).strip() if arch_m else ''
 
     # Extract Demos
