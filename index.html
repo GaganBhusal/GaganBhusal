@@ -221,7 +221,7 @@
                             <span class="port-card-date">2026 · Current</span>
                         </div>
                         <div class="port-card-media-box">
-                            <img src="assets/projects/satellite-sr.jpg" alt="Satellite Image Super-Resolution & Spatial Upscaling" loading="lazy">
+                            <img src="assets/projects/satellite.png" alt="Satellite Image Super-Resolution & Spatial Upscaling" loading="lazy">
                             <span class="port-media-badge">4X SUPER-RESOLUTION</span>
                         </div>
                         <p class="port-card-desc">
@@ -284,7 +284,7 @@
                             <span class="port-card-date">2025</span>
                         </div>
                         <div class="port-card-media-box">
-                            <video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg">
+                            <video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg" preload="auto">
                                 <source src="assets/projects/stem-quadruped.mp4" type="video/mp4">
                             </video>
                             <span class="port-media-badge"><span class="port-media-dot"></span>HARDWARE DEMO</span>
@@ -521,6 +521,7 @@
                                                 "external": true
                                     }
                         ],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <video autoplay loop muted playsinline poster=\"assets/projects/unitree-go2.jpg\" controls style=\"width: 100%; max-height: 440px; object-fit: contain; background: #000; display: block;\">\n                    <source src=\"assets/projects/unitree-go2.mp4\" type=\"video/mp4\">\n                </video>\n                    </div>",
                         "overview": "Reinforcement learning locomotion policy trained in Genesis simulator and deployed zero-shot onto the physical Unitree Go2 quadruped. Hardware validation demonstrated stable standing, push recovery, and blind omnidirectional walking.",
                         "architecture": "Asymmetric actor-critic (PPO via rsl_rl) trained across 4,096 parallel environments in Genesis with aggressive domain randomization (mass, friction, pushes, actuator PD gains). Commands stream directly over low-level CycloneDDS at 500 Hz.",
                         "demos": [],
@@ -545,6 +546,7 @@
                                     "PPO"
                         ],
                         "links": [],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <video autoplay loop muted playsinline poster=\"assets/projects/unitree-g1.jpg\" controls style=\"width: 100%; max-height: 440px; object-fit: contain; background: #000; display: block;\">\n                    <source src=\"assets/projects/unitree-g1.mp4\" type=\"video/mp4\">\n                </video>\n                    </div>",
                         "overview": "Developing an end-to-end whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid robot. Instead of manual trajectory tracking or hand-tuned keyframing, this system learns human-like walking and dynamic motions directly from monocular video demonstrations.",
                         "architecture": "The pipeline consists of three core stages:\n                <ol class=\"modal-bullets\" style=\"list-style-type: decimal; padding-left: 22px; margin-top: 10px;\">\n                    <li><strong>Human Pose Extraction:</strong> Extract 3D human motion sequences from monocular video demonstrations using GVHMR.</li>\n                    <li><strong>Kinematic Retargeting:</strong> Map human joint trajectories to the kinematic tree, range of motion, and joint limits of the Unitree G1 via GMR.</li>\n                    <li><strong>Asymmetric Actor-Critic:</strong> Train an assymmetric actor-critic policy with PPO in Genesis and Mjlab Simulator both using motion-matching rewards.</li>\n                </ol>",
                         "demos": [
@@ -581,6 +583,7 @@
                                                 "external": true
                                     }
                         ],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <img src=\"assets/projects/alphazero.jpg\" alt=\"AlphaZero from Scratch for Connect-4 Agent\" style=\"width: 100%; max-height: 440px; object-fit: cover; display: block;\">\n                    </div>",
                         "overview": "A clean PyTorch implementation of DeepMind's AlphaZero algorithm built from first scratch for two player zero sum perfect information board games (here for Connect-4). The system learns from zero prior knowledge strictly through Monte Carlo Tree Search (MCTS) and self-play data generation.",
                         "architecture": "Built with an asymmetric MCTS engine utilizing the PUCT (Polynomial Upper Confidence Trees) exploration formula. Features a shared deep Residual Convolutional Neural Network (ResNet) trunk with two output heads: a policy head predicting move probability distributions, and a value head predicting expected game outcomes in [-1, 1]. Self-play incorporates Dirichlet noise at the search root to encourage exploration.",
                         "demos": [
@@ -617,6 +620,7 @@
                                                 "external": false
                                     }
                         ],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <img src=\"assets/projects/ghost-net.jpg\" alt=\"Ghost-Net: Edge AI Forest Bioacoustics\" style=\"width: 100%; max-height: 440px; object-fit: cover; display: block;\">\n                    </div>",
                         "overview": "An autonomous, ultra-low-power edge bioacoustic surveillance node engineered to detect illegal deforestation (chainsaws, tree falling), poaching (gunshots), and environmental sounds. Designed for months of unattended field operation powered by small solar panels or batteries.",
                         "architecture": "Converts raw audio streams into 64-band Mel-Frequency Cepstral Coefficients (MFCC) spectrograms directly on the microcontroller. Features an ultra-lightweight 2D Convolutional Neural Network with depthwise separable layers. The trained model undergoes Post-Training Quantization (PTQ) to INT8 precision and is compiled into C++ byte arrays for TensorFlow Lite Micro.",
                         "demos": [
@@ -647,6 +651,7 @@
                                     "Super-Resolution"
                         ],
                         "links": [],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <img src=\"assets/projects/satellite.png\" alt=\"Satellite Image Super-Resolution & Spatial Upscaling\" style=\"width: 100%; max-height: 440px; object-fit: cover; display: block;\">\n                    </div>",
                         "overview": "Working as a Research Assistant contributing to a PhD research project focused on deep learning based spatial super-resolution and upscaling of multispectral satellite imagery. The goal is training Vision Transformers (Swin Transformer / SwinIR) and diffusion models against paired high-resolution UAV aerial captures as ground truth.",
                         "architecture": "Can't Disclose",
                         "demos": [],
@@ -671,6 +676,7 @@
                                                 "external": true
                                     }
                         ],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <img src=\"assets/projects/pinn.jpg\" alt=\"Physics-Informed Neural Networks (PINNs)\" style=\"width: 100%; max-height: 440px; object-fit: cover; display: block;\">\n                    </div>",
                         "overview": "A scientific machine learning research tool for solving arbitrary ordinary and partial differential equations (ODEs and PDEs) without requiring labeled solution datasets. The network learns by enforcing governing physical differential equations directly within its loss function.",
                         "architecture": "Constructed deep fully-connected networks with automatic differentiation (Autograd) computing higher-order partial derivatives. The composite loss enforces initial conditions, boundary conditions, and differential operator residuals. Deployed within an interactive Streamlit application.",
                         "demos": [],
@@ -699,6 +705,7 @@
                                                 "external": true
                                     }
                         ],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <video autoplay loop muted playsinline poster=\"assets/projects/stem-quadruped.jpg\" controls style=\"width: 100%; max-height: 440px; object-fit: contain; background: #000; display: block;\">\n                    <source src=\"assets/projects/stem-quadruped.mp4\" type=\"video/mp4\">\n                </video>\n                    </div>",
                         "overview": "An open-source, low-cost 8-DOF quadruped robot co-developed at Third World Nerd.",
                         "architecture": "Designed a 3D-printable modular chassis housing 8 micro-servos (2 DOF per leg: hip and knee pitch). Implemented trigonometric inverse kinematics running closed-loop on an Arduino micro-controller to generate trot, crawl, and pitch/roll stabilizing gaits. Integrated an ESP32 companion chip executing a quantized wake-word detector.",
                         "demos": [],
@@ -727,6 +734,7 @@
                                                 "external": true
                                     }
                         ],
+                        "mediaHtml": "<div class=\"modal-media-box\">\n                        <img src=\"assets/projects/transformer.jpg\" alt=\"English to Nepali Machine Translation with Custom Transformer\" style=\"width: 100%; max-height: 440px; object-fit: cover; display: block;\">\n                    </div>",
                         "overview": "A pure PyTorch implementation of the full encoder-decoder Transformer architecture ('Attention Is All You Need') hand-coded from scratch without using PyTorch's high-level `nn.Transformer` or pre-built attention blocks.",
                         "architecture": "Implemented scaled dot-product attention, multi-head attention with projection matrices, positional encodings, cross-attention in the decoder, and causal future masking. Includes custom Byte-Pair Encoding (BPE) tokenization.",
                         "demos": [],
@@ -805,38 +813,7 @@
                 specsHtml += '</ul></div>';
             }
 
-            let mediaHtml = '';
-            if (projectId === 'unitree-go2') {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/unitree-go2.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
-                            <source src="assets/projects/unitree-go2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                `;
-            } else if (projectId === 'unitree-g1') {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
-                            <source src="assets/projects/unitree-g1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                `;
-            } else if (projectId === 'stem-quadruped') {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
-                            <source src="assets/projects/stem-quadruped.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                `;
-            } else {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <img src="assets/projects/${projectId}.jpg" alt="${data.title}" style="width: 100%; max-height: 380px; object-fit: cover; display: block;">
-                    </div>
-                `;
-            }
+            let mediaHtml = data.mediaHtml || '';
 
             modalContent.innerHTML = `
                 <div class="modal-header">

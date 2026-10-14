@@ -27,18 +27,6 @@ PROJECT_ORDER = [
     'transformer'
 ]
 
-CARD_MEDIA = {
-    'unitree-go2': '''<video autoplay loop muted playsinline poster="assets/projects/unitree-go2.jpg" preload="auto">
-                                <source src="assets/projects/unitree-go2.mp4" type="video/mp4">
-                            </video>''',
-    'unitree-g1': '''<video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" preload="auto">
-                                <source src="assets/projects/unitree-g1.mp4" type="video/mp4">
-                            </video>''',
-    'stem-quadruped': '''<video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg">
-                                <source src="assets/projects/stem-quadruped.mp4" type="video/mp4">
-                            </video>''',
-}
-
 def parse_project_file(filepath, pid):
     with open(filepath, 'r', encoding='utf-8') as f:
         html = f.read()
@@ -65,6 +53,34 @@ def parse_project_file(filepath, pid):
             continue
         is_ext = 'target="_blank"' in extra
         links.append({'text': text.strip(), 'url': url.strip(), 'external': is_ext})
+
+    # Extract dynamic media from .modal-media-box
+    media_m = re.search(r'<div class="modal-media-box">\s*(.*?)\s*</div>', html, re.DOTALL)
+    if media_m:
+        raw_media = media_m.group(1).strip()
+        # Adjust relative paths from project subfolder (../assets/) to root (assets/)
+        clean_modal_media = raw_media.replace('../assets/', 'assets/')
+    else:
+        clean_modal_media = f'<img src="assets/projects/{pid}.jpg" alt="{title}" style="width: 100%; max-height: 440px; object-fit: cover; display: block;">'
+
+    # Build card media snippet from the project media
+    if '<video' in clean_modal_media:
+        v_src_m = re.search(r'<source\s+src="([^"]+)"', clean_modal_media)
+        v_poster_m = re.search(r'poster="([^"]+)"', clean_modal_media)
+        v_src = v_src_m.group(1) if v_src_m else f'assets/projects/{pid}.mp4'
+        v_poster = v_poster_m.group(1) if v_poster_m else f'assets/projects/{pid}.jpg'
+        card_media_html = f'''<video autoplay loop muted playsinline poster="{v_poster}" preload="auto">
+                                <source src="{v_src}" type="video/mp4">
+                            </video>'''
+    else:
+        img_src_m = re.search(r'<img\s+src="([^"]+)"', clean_modal_media)
+        img_alt_m = re.search(r'alt="([^"]*)"', clean_modal_media)
+        img_src = img_src_m.group(1) if img_src_m else f'assets/projects/{pid}.jpg'
+        img_alt = img_alt_m.group(1) if img_alt_m else title
+        card_media_html = f'<img src="{img_src}" alt="{img_alt}" loading="lazy">'
+
+    # Wrap clean modal media
+    modal_media_box = f'<div class="modal-media-box">\n                        {clean_modal_media}\n                    </div>'
 
     # Extract card summary block
     summary_m = re.search(r'<div class="project-card-summary"[^>]*data-badge-label="([^"]*)"[^>]*data-has-dot="([^"]*)"[^>]*data-is-featured="([^"]*)"[^>]*data-date="([^"]*)"[^>]*>(.*?)</div>\s*<!-- CARD_SUMMARY_END -->', html, re.DOTALL)
@@ -127,6 +143,8 @@ def parse_project_file(filepath, pid):
         'has_dot': has_dot,
         'is_featured': is_featured,
         'footer_slot': footer_slot,
+        'card_media_html': card_media_html,
+        'modal_media_box': modal_media_box,
         'overview': overview,
         'architecture': architecture,
         'demos': demos,
@@ -138,8 +156,6 @@ def generate_card_html(p):
     featured_class = ' port-card-featured' if p['is_featured'] else ''
     dot_html = '<span class="port-media-dot"></span>' if p['has_dot'] else ''
     badge_html = f'<span class="port-media-badge">{dot_html}{p["badge_label"]}</span>' if p['badge_label'] else ''
-
-    media_html = CARD_MEDIA.get(pid, f'<img src="assets/projects/{pid}.jpg" alt="{p["title"]}" loading="lazy">')
 
     tags_html = '\n'.join([f'                            <span class="port-tag">{t}</span>' for t in p['tags'][:6]])
 
@@ -157,7 +173,7 @@ def generate_card_html(p):
                             <span class="port-card-date">{p["date"]}</span>
                         </div>
                         <div class="port-card-media-box">
-                            {media_html}
+                            {p['card_media_html']}
                             {badge_html}
                         </div>
                         <p class="port-card-desc">
@@ -210,6 +226,7 @@ def build():
                 'date': p['date'],
                 'tags': p['tags'],
                 'links': p['links'],
+                'mediaHtml': p['modal_media_box'],
                 'overview': p['overview'],
                 'architecture': p['architecture'],
                 'demos': p['demos'],

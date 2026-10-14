@@ -165,38 +165,7 @@
                 specsHtml += '</ul></div>';
             }
 
-            let mediaHtml = '';
-            if (projectId === 'unitree-go2') {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/unitree-go2.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
-                            <source src="assets/projects/unitree-go2.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                `;
-            } else if (projectId === 'unitree-g1') {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/unitree-g1.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
-                            <source src="assets/projects/unitree-g1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                `;
-            } else if (projectId === 'stem-quadruped') {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <video autoplay loop muted playsinline poster="assets/projects/stem-quadruped.jpg" controls style="width: 100%; max-height: 380px; object-fit: contain; background: #000; display: block;">
-                            <source src="assets/projects/stem-quadruped.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                `;
-            } else {
-                mediaHtml = `
-                    <div class="modal-media-box">
-                        <img src="assets/projects/${projectId}.jpg" alt="${data.title}" style="width: 100%; max-height: 380px; object-fit: cover; display: block;">
-                    </div>
-                `;
-            }
+            let mediaHtml = data.mediaHtml || '';
 
             modalContent.innerHTML = `
                 <div class="modal-header">
@@ -306,3 +275,4 @@
     </script>
 </body>
 </html>
+
