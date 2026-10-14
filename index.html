@@ -546,11 +546,11 @@
                         ],
                         "links": [],
                         "overview": "Developing an end-to-end whole-body motion imitation pipeline for the 23-DOF Unitree G1 humanoid robot. Instead of manual trajectory tracking or hand-tuned keyframing, this system learns human-like walking and dynamic motions directly from monocular video demonstrations.",
-                        "architecture": "The pipeline consists of three core stages:\n                <ol class=\"modal-bullets\" style=\"list-style-type: decimal; padding-left: 22px; margin-top: 10px;\">\n                    <li><strong>Human Pose Extraction:</strong> Extract 3D human motion sequences from monocular video demonstrations using GVHMR.</li>\n                    <li><strong>Kinematic Retargeting:</strong> Map human joint trajectories to the kinematic tree, range of motion, and joint limits of the Unitree G1 via GMR.</li>\n                    <li><strong>Teacher-Student RL Distillation:</strong> Train an expert teacher policy with PPO in Genesis/Mjlab Simulator using motion-matching rewards, followed by student policy distillation conditioned solely on onboard sensor proprioception (IMU and joint encoders) for physical sim-to-real transfer.</li>\n                </ol>",
+                        "architecture": "The pipeline consists of three core stages:\n                <ol class=\"modal-bullets\" style=\"list-style-type: decimal; padding-left: 22px; margin-top: 10px;\">\n                    <li><strong>Human Pose Extraction:</strong> Extract 3D human motion sequences from monocular video demonstrations using GVHMR.</li>\n                    <li><strong>Kinematic Retargeting:</strong> Map human joint trajectories to the kinematic tree, range of motion, and joint limits of the Unitree G1 via GMR.</li>\n                    <li><strong>Asymmetric Actor-Critic:</strong> Train an assymmetric actor-critic policy with PPO in Genesis and Mjlab Simulator both using motion-matching rewards.</li>\n                </ol>",
                         "demos": [
                                     {
                                                 "title": "Simulated Imitation & Sim-to-Real Transfer",
-                                                "desc": "Demonstrated accurate retargeting of dynamic human motions turns in both Genesis and Mjlab Simulator. Student policy achieves partial sim-to-real transfer. (Working on improving sim-to-real transfer with domain randomization and teacher-student distillation.)",
+                                                "desc": "Demonstrated accurate retargeting of dynamic human motions turns in both Genesis and Mjlab Simulator.",
                                                 "metrics": []
                                     }
                         ],
@@ -558,7 +558,7 @@
                                     "Platform: Unitree G1 Humanoid Robot (23-DOF)",
                                     "Pose Estimation: GVHMR (General Video Human Motion Recovery)",
                                     "Kinematic Retargeting: GMR (Geometric Motion Retargeting)",
-                                    "Policy Training: Genesis Simulator + PPO Teacher-Student Distillation"
+                                    "Policy Training: Genesis Simulator + PPO Asymmetric Actor-Critic"
                         ]
             },
             "alphazero": {

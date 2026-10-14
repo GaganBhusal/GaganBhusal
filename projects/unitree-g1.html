@@ -107,7 +107,7 @@
                 <ol class="modal-bullets" style="list-style-type: decimal; padding-left: 22px; margin-top: 10px;">
                     <li><strong>Human Pose Extraction:</strong> Extract 3D human motion sequences from monocular video demonstrations using GVHMR.</li>
                     <li><strong>Kinematic Retargeting:</strong> Map human joint trajectories to the kinematic tree, range of motion, and joint limits of the Unitree G1 via GMR.</li>
-                    <li><strong>Teacher-Student RL Distillation:</strong> Train an expert teacher policy with PPO in Genesis/Mjlab Simulator using motion-matching rewards, followed by student policy distillation conditioned solely on onboard sensor proprioception (IMU and joint encoders) for physical sim-to-real transfer.</li>
+                    <li><strong>Asymmetric Actor-Critic:</strong> Train an assymmetric actor-critic policy with PPO in Genesis and Mjlab Simulator both using motion-matching rewards.</li>
                 </ol></div>
             </div>
 
@@ -115,7 +115,7 @@
             
             <div class="modal-section">
                 <h4 class="modal-section-title">Simulated Imitation & Sim-to-Real Transfer</h4>
-                <p class="modal-body-text">Demonstrated accurate retargeting of dynamic human motions turns in both Genesis and Mjlab Simulator. Student policy achieves partial sim-to-real transfer. (Working on improving sim-to-real transfer with domain randomization and teacher-student distillation.)</p>
+                <p class="modal-body-text">Demonstrated accurate retargeting of dynamic human motions turns in both Genesis and Mjlab Simulator. </p>
             </div>
 
             <!-- Specs -->
@@ -126,7 +126,7 @@
                     <li>Platform: Unitree G1 Humanoid Robot (23-DOF)</li>
                     <li>Pose Estimation: GVHMR (General Video Human Motion Recovery)</li>
                     <li>Kinematic Retargeting: GMR (Geometric Motion Retargeting)</li>
-                    <li>Policy Training: Genesis Simulator + PPO Teacher-Student Distillation</li>
+                    <li>Policy Training: Genesis Simulator + PPO Asymmetric Actor-Critic</li>
                 </ul>
             </div>
         </article>
